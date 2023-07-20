@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main(void)
+//int main(void)
 //{
 //	int i, j;
 //	i = 0;
@@ -57,31 +57,106 @@ int main(void)
 //	scanf_s("%d", &data);
 //}
 
+//{
+//	int k, max, min;
+//	int data[20];
+//
+//	//最大20件の整数を配列data[]に代入する
+//	for (k = 0; k < 20; k++) {
+//		printf("配列　data[%d]にデータを入力してください\n", k);
+//		scanf_s("%d", &data[k]);
+//	}
+//	
+//	//1件目のデータを仮の最大値、最小地とする
+//	max = data[0];
+//	min = data[0];
+//
+//	for (k = 0; k < 20; k++) {
+//		//最大値をmaxに代入する
+//		if (data[k] > max) {
+//			max = data[k];
+//		}
+//		if (data[k] < min) {
+//			min = data[k];
+//		}
+//	}
+//	printf("最大値は%dです\n", max);
+//	printf("最小値は%dです\n", min);
+//
+//}
+
+#include<stdio.h>
+//int main(void)
+//{
+//    int n, p, k, i;
+//    char x;
+//    char a[] = { 'a','b','c','d','e','f','h','i','j','k',' ' };
+//
+//    //配列のデータ件数
+//    n = 10;
+//
+//    //挿入する位置
+//    p = 6;
+//
+//    //挿入するデータ
+//    x = 'g';
+//
+//    //配列aの内容を表示する
+//    for (k = 0; k < n + 1; k++) {
+//        printf("配列a[%d]の内容 %c \n", k, a[k]);
+//    }
+//
+//    //kはカウンタ　配列aの位置（添え字）を表している
+//    k = n - 1;
+//
+//    //配列aの要素を1つずらして代入している
+//    while (k >= p) {
+//        a[k + 1] = a[k];
+//        k = k - 1;
+//    }
+//
+//    a[p] = x;
+//
+//    //配列aの内容を表示する
+//    for (k = 0; k < n + 1; k++) {
+//        printf("配列a[%d]の内容 %c \n", k, a[k]);
+//    }
+
+//第6章 6-7
+//例題6-5　データの削除
+#include<stdio.h>
+int main(void)
 {
-	int k, max, min;
-	int data[20];
+    int n, p, k;
+    char a[] = { 'a','b','c','d','e','e','f' };
 
-	//最大20件の整数を配列data[]に代入する
-	for (k = 0; k < 20; k++) {
-		printf("配列　data[%d]にデータを入力してください\n", k);
-		scanf_s("%d", &data[k]);
-	}
-	
-	//1件目のデータを仮の最大値、最小地とする
-	max = data[0];
-	min = data[0];
+    //配列のデータ件数
+    n = 7;
 
-	for (k = 0; k < 20; k++) {
-		//最大値をmaxに代入する
-		if (data[k] > max) {
-			max = data[k];
-		}
-		if (data[k] < min) {
-			min = data[k];
-		}
-	}
-	printf("最大値は%dです\n", max);
-	printf("最小値は%dです\n", min);
+    //削除する位置
+    p = 4;
 
+    //配列aの内容を表示する
+    for (k = 0; k < n; k++) {
+        printf("配列a[%d]の内容 %c \n", k, a[k]);
+    }
+
+    //kはカウンタ　配列aの位置（添え字）を表している
+    k = p;
+
+    //配列aの要素を1つずらして代入している
+    while (k < n - 1) {
+        a[k] = a[k + 1];
+        k = k + 1;
+    }
+
+    //削除したのでデータの個数を減らす
+    n = n - 1;
+
+    //配列aの内容を表示する
+    for (k = 0; k < n; k++) {
+        printf("配列a[%d]の内容 %c \n", k, a[k]);
+    }
 }
+
 
