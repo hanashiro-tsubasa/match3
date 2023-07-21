@@ -127,5 +127,43 @@ void GameMainScene_Update(void)
 
 
 
-}
+}/****************************************************
+*ゲームメイン画面：描画処理
+* 引　数：なし
+* 戻り値：なし
+****************************************************/
 
+void GameMainScene_Draw(void)
+{
+	int PosX = 600;
+	int tmp_level = GameLevel;
+	int tmp_score = Get_StageScore();
+
+
+	//ステージを描画
+	StageDraw();
+
+	//フェードアウト状態か？
+	iif(Get_StageState() == 1)
+	{
+		FadeOutBlock();    //フェードアウトする。
+	}
+
+	//レベルを描画
+	do {
+		DrawRotaGraph(PosX, 80, 0.5f, 0, NumberImage[tmp_level % 10], TRUE);
+		tmp_level /= 10;
+		PosX = 620;
+		do {
+			DrawRotaGraph(PosX, 160, 0.3f, 0, NumberImage[tmp_score % 10],
+				TRUE);
+			tmp_score /= 10;
+			PosX -= 20;
+		} while (tmp_score > 0);
+
+		//制限時間の描画
+		DrawBox(491, 469, 509, 469 - GameTime / 60 * 2, 0x0033ff, TRUE);
+
+	}
+
+}
