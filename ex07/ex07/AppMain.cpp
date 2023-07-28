@@ -12,17 +12,16 @@ int global=30;
 //プロトタイプ宣言
 /*int Sum(int para1, int para2);*/    //2つの値の合計値を求める関数
 //プロトタイプ宣言
-void Func1(int a);      //値渡し用関数
-void Func2(int* a);     //アドレス渡し用関数
+void Func1(int a[]);      //値渡し用関数
+void Func2(int* a);       //アドレス渡し用関数
 
 //メイン関数
 int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hPrevInstance, _In_
 	LPSTR lpCmdLne, _In_ int nShowCmd)
 {
 	//ローカル変数定義
-	int num = 10;
-
-
+	/*int num = 10;*/
+	int num[] = { 1,2,3 };
 	//変数定義
 	/*int num = Sum(2, 3);*/
 
@@ -40,14 +39,14 @@ int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hPrevInstance, _
 	Func1(num);
 
 	//変数の値を出力
-	DrawFormatString(20, 60, GetColor(255, 255, 255), "%d",num);
+	/*DrawFormatString(20, 60, GetColor(255, 255, 255),*//* "%d",num);*/
 	/*DrawFormatString(20, 40, GetColor(255, 255, 255), "%d", Sum(10,30));*/
 	
 	//関数の呼び出し
-	Func2(&num);
+	Func2(num);
 
 	//変数の値を出力
-	DrawFormatString(20, 80, GetColor(255, 255, 255), "%d", num);
+	/*DrawFormatString(20, 80, GetColor(255, 255, 255), "%d", num);*/
 
 
 
@@ -64,30 +63,55 @@ int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 }
 
-//値渡し用関数
-void Func1(int a)
+//配列のアドレス渡し用関数
+void Func1(int a[])
 {
-	//引数の値を出力
-	DrawFormatString(20, 20, GetColor(255, 255, 255), "%d", a);
+	int i;
 
-	//引数の値を更新
-	a += 10;
-
-	//引数の値を出力
-	DrawFormatString(20, 40, GetColor(255, 255, 255), "%d", a);
+	//因数の中身を出力
+	for (i = 0; i < 3; i++)
+	{
+		DrawFormatString(20, (20 + (20 * i)), GetColor(255, 255, 255), "%d", a[i]);
+	}
 }
 
-//アドレス渡し用関数
+//ポインタのアドレス渡し用関数
 void Func2(int* a)
 {
-	//引数の値を出力
-	DrawFormatString(20, 80, GetColor(255, 255, 255), "%d", *a);
-	//引数の値を更新
-	*a += 10;
-	//引数の値を更新
-	DrawFormatString(20, 100, GetColor(255, 255, 255), "%d", *a);
+	int i;
 
+	//引数の中身を出力
+	for (i = 0; i < 3; i++)
+	{
+		DrawFormatString(20, (20 + (20 * i)), GetColor(255, 255, 255), "%d", *(a + i));
+	}
 }
+
+
+//値渡し用関数
+//void Func1(int a)
+//{
+//	//引数の値を出力
+//	DrawFormatString(20, 20, GetColor(255, 255, 255), "%d", a);
+//
+//	//引数の値を更新
+//	a += 10;
+//
+//	//引数の値を出力
+//	DrawFormatString(20, 40, GetColor(255, 255, 255), "%d", a);
+//}
+//
+////アドレス渡し用関数
+//void Func2(int* a)
+//{
+//	//引数の値を出力
+//	DrawFormatString(20, 80, GetColor(255, 255, 255), "%d", *a);
+//	//引数の値を更新
+//	*a += 10;
+//	//引数の値を更新
+//	DrawFormatString(20, 100, GetColor(255, 255, 255), "%d", *a);
+//
+//}
 
 //void Func(void)
 //{
