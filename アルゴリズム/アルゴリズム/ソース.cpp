@@ -1,4 +1,4 @@
-#include<stdio.h>
+//#include<stdio.h>
 //int main(void)
 //{
 //	int i, j;
@@ -85,7 +85,7 @@
 //
 //}
 
-#include<stdio.h>
+//#include<stdio.h>
 //int main(void)
 //{
 //    int n, p, k, i;
@@ -124,39 +124,61 @@
 
 //第6章 6-7
 //例題6-5　データの削除
+//#include<stdio.h>
+//int main(void)
+//{
+//    int n, p, k;
+//    char a[] = { 'a','b','c','d','e','e','f' };
+//
+//    //配列のデータ件数
+//    n = 7;
+//
+//    //削除する位置
+//    p = 4;
+//
+//    //配列aの内容を表示する
+//    for (k = 0; k < n; k++) {
+//        printf("配列a[%d]の内容 %c \n", k, a[k]);
+//    }
+//
+//    //kはカウンタ　配列aの位置（添え字）を表している
+//    k = p;
+//
+//    //配列aの要素を1つずらして代入している
+//    while (k < n - 1) {
+//        a[k] = a[k + 1];
+//        k = k + 1;
+//    }
+//
+//    //削除したのでデータの個数を減らす
+//    n = n - 1;
+//
+//    //配列aの内容を表示する
+//    for (k = 0; k < n; k++) {
+//        printf("配列a[%d]の内容 %c \n", k, a[k]);
+//    }
+//}
+
+
 #include<stdio.h>
+
 int main(void)
 {
-    int n, p, k;
-    char a[] = { 'a','b','c','d','e','e','f' };
+	int i, j;
+	i ;
+	j ;
 
-    //配列のデータ件数
-    n = 7;
+	int b[9][9];
 
-    //削除する位置
-    p = 4;
-
-    //配列aの内容を表示する
-    for (k = 0; k < n; k++) {
-        printf("配列a[%d]の内容 %c \n", k, a[k]);
-    }
-
-    //kはカウンタ　配列aの位置（添え字）を表している
-    k = p;
-
-    //配列aの要素を1つずらして代入している
-    while (k < n - 1) {
-        a[k] = a[k + 1];
-        k = k + 1;
-    }
-
-    //削除したのでデータの個数を減らす
-    n = n - 1;
-
-    //配列aの内容を表示する
-    for (k = 0; k < n; k++) {
-        printf("配列a[%d]の内容 %c \n", k, a[k]);
-    }
+	for (i = 0; i < 10; i++) {
+		
+	/*	printf("\n");*/
+		for (j = 0; j < 10; j++) {
+			b[i][j] = 1;
+			printf("%d\n", i * j);
+		}
+	}
 }
+
 
 

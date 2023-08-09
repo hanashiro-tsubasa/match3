@@ -67,7 +67,7 @@ int SceneManager_Initialize(GAME_MODE mode)
 	}
 
 	Game_Mode = mode;
-	Nest_Mode = Game_Mode;
+	Next_Mode = Game_Mode;
 
 
 	return Read_Error;
