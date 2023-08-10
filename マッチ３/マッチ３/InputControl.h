@@ -21,6 +21,6 @@ int Input_Escape(void);
 
 int GetOldkey(int key);
 int GetNowKey(int key);
-int GetkeyFlg(int key);
+int GetKeyFlg(int key);
 int GetMousePositionX(void);
 int GetMousePositionY(void);
