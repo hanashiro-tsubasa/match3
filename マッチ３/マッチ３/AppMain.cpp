@@ -38,11 +38,11 @@
 *プログラムの開始
 ****************************************************/
 
-int WINAPI WinMain(_In_HINSTANCE hInstance, _In_opt_HINSTANCE hPrevInstance,
-	_In_LPSTR lpCmdLine, _In_int nShowCmd)
+int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
 	//ウィンドウタイトル設定
-	SetMainWndowText("Match 3 Puzzle");
+	SetMainWindowText("Match 3 Puzzle");
 	//ウィンドモードで起動
 	ChangeWindowMode(TRUE);
 	//画面サイズの最大サイズ,カラービット数を設定

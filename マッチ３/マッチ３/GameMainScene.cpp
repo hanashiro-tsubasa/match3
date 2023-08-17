@@ -9,7 +9,7 @@
 ****************************************************/
 
 #define TIMELIMIT       (3600*3)    //制限時間
-#define NUMBER_IMAGE_MAX(10)        //数字画像数
+#define NUMBER_IMAGE_MAX  (10)        //数字画像数
 
 /****************************************************
 *型定義
@@ -48,8 +48,8 @@ int GameMainScene_Initialize(void)
 
 
 	//画像読み込み
-	LoadDivGraph("images/number.png"NUMBER_IMAGE_MAX,
-		NUMBER_IMAGE_MAX, i, 60, 120, NumberImage);
+	LoadDivGraph("images/number.png",NUMBER_IMAGE_MAX,
+		NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
 
 	//ステージ機能初期化
 	ret = StageInitialize();
@@ -91,21 +91,21 @@ int GameMainScene_Initialize(void)
 
 void GameMainScene_Update(void)
 {
-	swich(Get_StageState())
+	switch(Get_StageState())
 	{
-		case 0;
+	case 0:
 			SelectBlock();    //ブロックを選択する。   
 			break;
-	    case 2;
+	case 2:
 			MoveBlock();      //ブロックを移動させる。
 			break;
-		case 3;
+	case 3:
 			CheckBlock();     //ブロックの確認
 			break;
-		case  4;
+	case  4:
 			CheckClear();     //クリアチェック
 			break;
-	   default;
+	default:
 	   break;
 
 	}
@@ -122,7 +122,7 @@ void GameMainScene_Update(void)
 	//ミッションを達成したら、ゲームクリアに遷移する。
 	if (Get_StageClearFlag())
 	{
-		Change_Scene(E_GAME_CLEAR;
+		Change_Scene(E_GAME_CLEAR);
 	}
 
 
@@ -144,7 +144,7 @@ void GameMainScene_Draw(void)
 	StageDraw();
 
 	//フェードアウト状態か？
-	iif(Get_StageState() == 1)
+	if(Get_StageState() == 1)
 	{
 		FadeOutBlock();    //フェードアウトする。
 	}
@@ -153,6 +153,10 @@ void GameMainScene_Draw(void)
 	do {
 		DrawRotaGraph(PosX, 80, 0.5f, 0, NumberImage[tmp_level % 10], TRUE);
 		tmp_level /= 10;
+		PosX -= 30;
+	} while (tmp_level > 0);
+
+	//スコアの描画
 		PosX = 620;
 		do {
 			DrawRotaGraph(PosX, 160, 0.3f, 0, NumberImage[tmp_score % 10],
@@ -165,5 +169,3 @@ void GameMainScene_Draw(void)
 		DrawBox(491, 469, 509, 469 - GameTime / 60 * 2, 0x0033ff, TRUE);
 
 	}
-
-}

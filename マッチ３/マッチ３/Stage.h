@@ -29,4 +29,4 @@ int Get_StageClearFlag(void);
 int Get_StageScore(void);
 
 
-void SetStageMission(int mission);
+void Set_StageMission(int mission);

@@ -5,7 +5,7 @@
 *マクロ定義
 ****************************************************/
 
-#define FREAM_RATE　　(60U)
+#define FREAM_RATE  (60U)
 
 /****************************************************
 *型定義
@@ -20,4 +20,3 @@
 
 void FreamControl_Initialize(void);
 void FreamControl_Update(void);
-

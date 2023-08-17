@@ -20,7 +20,7 @@
 ****************************************************/
 
 GAME_MODE Game_Mode;      //ゲームモード情報（現在）
-GAME_MODE Next_Mode;　　　//ゲームモード情報（次）
+GAME_MODE Next_Mode;      //ゲームモード情報（次）
 
 /****************************************************
 *プロトタイプ宣言
@@ -92,19 +92,19 @@ void SceneManager_Update(void)
 
 	switch (Game_Mode)
 	{
-		case E_TITLE;
+	case E_TITLE:
 			TitleScene_Update();
 			break;
-		case E_GAMEMAIN;
+	case E_GAMEMAIN:
 				GameMainScene_Update();
 			break;
-		case E_GAME_CLEAR;
+	case E_GAME_CLEAR:
 					GameClearScene_Update();
 			break;
-	    case E_GAME_OVER;
+	case E_GAME_OVER:
 						GameOverScene_Update();
 			break;
-		default;
+	default:
 		    break;
 	}
 }
@@ -121,16 +121,16 @@ void SceneManager_Draw(void)
 	switch (Game_Mode)
 
 	{
-		case E_TITLE;
+	case E_TITLE:
 			TitleScene_Draw();
 			break;
-		case E_GAMEMAIN;
+	case E_GAMEMAIN:
 				GameMainScene_Draw();
 			break;
-		case E_GAME_OVER;
+	case E_GAME_OVER:
 				GameOverScene_Draw();
 			break;
-		default;
+	default:
 			break;
 	}
 }

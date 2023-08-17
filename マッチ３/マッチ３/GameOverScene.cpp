@@ -29,7 +29,7 @@ int GameOverScene_Initialize(void)
 	//音源読み込み
 	GameOverSE = LoadSoundMem("sounds/gameover_se.mp3");
 
-	GameOverFALSE;
+	GameOverFlag = FALSE;
 
 	//エラーチェック
 	if (GameOverImage == D_ERROR)
@@ -40,6 +40,8 @@ int GameOverScene_Initialize(void)
 	{
 		ret = D_ERROR;
 	}
+	return ret;
+}
 
 /****************************************************
 *ゲームオーバー画面：更新処理
@@ -58,7 +60,7 @@ int GameOverScene_Initialize(void)
 			}
 			else
 			{
-				PlaySoundMem(GameOverSE, DX_PLAYPE_BACK);
+				PlaySoundMem(GameOverSE, DX_PLAYTYPE_BACK);
 				GameOverFlag = TRUE;
 			}
 		}
