@@ -50,7 +50,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 
 	//Dxライブラリ初期化処理
 	//エラーが発生したら、終了する
-	if (DxLib_Init() == D_ERROR) {
+	if (DxLib_Init() == D_ERROR)
+	{
 		return D_ERROR;
 	}
 

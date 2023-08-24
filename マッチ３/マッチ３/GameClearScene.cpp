@@ -54,9 +54,9 @@ int GameClearScene_Initialize(void)
 	}
 	if (GameClearSE == D_ERROR)
 	{
-		ret = -1;
+		ret = D_ERROR;
 	}
-	return D_ERROR;
+	return ret;
 
 }
 

@@ -46,6 +46,7 @@ int SceneManager_Initialize(GAME_MODE mode)
 
 
 	//ƒQ[ƒ€ƒƒCƒ“‰æ–Ê
+
 	Read_Error = GameMainScene_Initialize();
 	if (Read_Error == D_ERROR)
 	{

@@ -71,7 +71,7 @@ void TitleScene_Update(void)
 
 	if (GetKeyFlg(MOUSE_INPUT_LEFT) == TRUE)
 	{
-		if (GetMousePositionX()>120&&GetMousePositionX() < 290 &&
+		if (GetMousePositionX()>120 && GetMousePositionX() < 290 &&
 			GetMousePositionY() > 260 && GetMousePositionY() < 315)
 		{
 			Change_Scene(E_GAMEMAIN);

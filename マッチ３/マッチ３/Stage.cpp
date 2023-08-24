@@ -82,13 +82,13 @@ void restore_block(void);
 * 戻り値：エラー情報
 ****************************************************/
 
-	int stageInitialize(void)
+	int StageInitialize(void)
 	{
 		int ret = 0;
 		int i;
 
 		//画像読み込み
-		LoadDivGraph("images/block,png", BLOCK_IMAGE_MAX, BLOCK_IMAGE_MAX, 1, BLOCKSIZE, BLOCKSIZE, BlockImage);
+		LoadDivGraph("images/block.png", BLOCK_IMAGE_MAX, BLOCK_IMAGE_MAX, 1, BLOCKSIZE, BLOCKSIZE, BlockImage);
 		StageImage = LoadGraph("images/stage.png");
 
 		//4
@@ -240,7 +240,7 @@ void restore_block(void);
 					Block[i][j].height = BLOCKSIZE;
 					Block[i][j].image = GetRand(7) + 1;//1～8の乱数
 					}
-			}
+ 			}
 		}
 
 		/*for (i = 1; i < HEIGHT - 1; i++)
@@ -377,7 +377,7 @@ void restore_block(void);
 			* 引　数：なし
 			* 戻り値：なし
 			****************************************************/
-			void FadeOutaBlock(void)
+			void FadeOutBlock(void)
 			{
 				static int BlendMode = 255;
 				int i, j;
