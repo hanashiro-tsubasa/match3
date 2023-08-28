@@ -340,7 +340,7 @@ void restore_block(void);
 			TmpBlock = Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x +
 				1].image;
 
-			Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x + 1].image;
+			Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x + 1].image=
 			Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image;
 			 Block[Select[TMP_CURSOR].y+1][Select[TMP_CURSOR].x+1].image=
 				TmpBlock;
@@ -610,6 +610,11 @@ void restore_block(void);
 					Item[ColorH - 1] += CountH;
 					Stage_Score += CountH * 10;
 				}
+				if (CountW >= 3)
+				{
+					Item[ColorW - 1] += CountW;
+					Stage_Score += CountW * 10;
+				}
 				ret = TRUE;
 			}
 			return ret;
@@ -638,7 +643,7 @@ void restore_block(void);
 			{
 				combo_check_h(y + 1, x, cnt, col);
 			}
-			if (Block[y + 1][x].image == Color)
+			if (Block[y - 1][x].image == Color)
 			{
 				combo_check_h(y - 1, x, cnt, col);
 			}
