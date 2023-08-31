@@ -35,38 +35,39 @@ GAME_MODE Next_Mode;      //ゲームモード情報（次）
 int SceneManager_Initialize(GAME_MODE mode)
 {
 	int Read_Error;
-
+	
 	//シーン読み込み処理
-	//タイトル画面
-	Read_Error = TitleScene_Initialize();
-	if (Read_Error == D_ERROR)
-	{
-		return D_ERROR;
-	}
+	
+		//タイトル画面
+		Read_Error = TitleScene_Initialize();
+		if (Read_Error == D_ERROR)
+		{
+			return D_ERROR;
+		}
 
 
-	//ゲームメイン画面
+		//ゲームメイン画面
 
-	Read_Error = GameMainScene_Initialize();
-	if (Read_Error == D_ERROR)
-	{
-		return D_ERROR;
-	}
+		Read_Error = GameMainScene_Initialize();
+		if (Read_Error == D_ERROR)
+		{
+			return D_ERROR;
+		}
 
-	//ゲームクリア画面
-	Read_Error = GameClearScene_Initialize();
-	if (Read_Error == D_ERROR)
-	{
-		return D_ERROR;
-	}
+		//ゲームクリア画面
+		Read_Error = GameClearScene_Initialize();
+		if (Read_Error == D_ERROR)
+		{
+			return D_ERROR;
+		}
 
-	//ゲームオーバー画面
-	Read_Error = GameOverScene_Initialize();
-	if (Read_Error == D_ERROR)
-	{
-		return D_ERROR;
-	}
-
+		//ゲームオーバー画面
+		Read_Error = GameOverScene_Initialize();
+		if (Read_Error == D_ERROR)
+		{
+			return D_ERROR;
+		}
+	
 	Game_Mode = mode;
 	Next_Mode = Game_Mode;
 
@@ -127,6 +128,9 @@ void SceneManager_Draw(void)
 			break;
 	case E_GAMEMAIN:
 				GameMainScene_Draw();
+			break;
+	case E_GAME_CLEAR:
+		        GameClearScene_Draw();
 			break;
 	case E_GAME_OVER:
 				GameOverScene_Draw();

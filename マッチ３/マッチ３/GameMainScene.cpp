@@ -29,6 +29,7 @@ int ReStartFlag;
 
 
 int NumberImage[NUMBER_IMAGE_MAX];   //数字用画像
+int Level=0;
 
 /****************************************************
 *プロトタイプ宣言
@@ -45,8 +46,8 @@ int GameMainScene_Initialize(void)
 {
 	int ret = 0;
 	int i;
-
-
+	
+	Level++;
 	//画像読み込み
 	LoadDivGraph("images/number.png",NUMBER_IMAGE_MAX,
 	NUMBER_IMAGE_MAX, 1, 60, 120, NumberImage);
@@ -71,11 +72,15 @@ int GameMainScene_Initialize(void)
 		GameLevel = 1;       //ゲームレベルの初期化
 		Set_StageMission(3); //ミッションの初期化
 		GameCount++;         //次回の設定
+		
 	}
-	else
-	{
-		GameLevel++;          //ゲームレベルの更新
-		Set_StageMission(3);  //ミッションを増やす
+	else if (Level % 2 != 0) {
+		{
+
+			GameLevel++;
+			//ゲームレベルの更新
+			Set_StageMission(3);  //ミッションを増やす
+		}
 	}
 	GameTime = TIMELIMIT;     //制限時間の初期化
 
